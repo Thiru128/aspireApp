@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/thiru/react-native/Sample/aspire/aspireApp/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml",
+            "outputFile": "/Users/thiru/react-native/Sample/AspireApp/aspireApp/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml",
             "map": [
                 {
                     "source": "/Users/thiru/.gradle/caches/transforms-2/files-2.1/d67cd79abd1ca209502f51c69d23182b/core-1.1.0/res/values-es-rUS/values-es-rUS.xml",
