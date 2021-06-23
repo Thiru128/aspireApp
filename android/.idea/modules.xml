@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AspireApp.iml" filepath="$PROJECT_DIR$/.idea/modules/AspireApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AspireApp.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AspireApp.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2139814163/AspireApp.react-native-async-storage_async-storage.iml" filepath="$PROJECT_DIR$/.idea/modules/-2139814163/AspireApp.react-native-async-storage_async-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-786297228/AspireApp.react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/-786297228/AspireApp.react-native-community_masked-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1213616355/AspireApp.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/1213616355/AspireApp.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-878572711/AspireApp.react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/-878572711/AspireApp.react-native-reanimated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1294418804/AspireApp.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/-1294418804/AspireApp.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1164975012/AspireApp.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/1164975012/AspireApp.react-native-screens.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,6 @@
+module Pods_AspireApp_AspireAppTests {
+  umbrella header "Pods-AspireApp-AspireAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,14 @@
+com/aspireapp/ReactNativeFlipper.java
+ com.aspireapp.ReactNativeFlipper
+ com.aspireapp.ReactNativeFlipper$1
+ com.aspireapp.ReactNativeFlipper$2
+ com.aspireapp.ReactNativeFlipper$2$1
+com/aspireapp/MainActivity.java
+ com.aspireapp.MainActivity
+com/aspireapp/MainApplication.java
+ com.aspireapp.MainApplication
+ com.aspireapp.MainApplication$1
+com/aspireapp/BuildConfig.java
+ com.aspireapp.BuildConfig
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
