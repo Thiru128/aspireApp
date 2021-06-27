@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import {
   SafeAreaView,
   ScrollView,
-  StatusBar,
-  StyleSheet,
   Text,
   View,
   TouchableOpacity,
   Image,
   Switch,
+  FlatList,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { colors } from "../../constants";
+import { colors, DebitScreenList } from "../../constants";
 import { styles } from "./styles";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -21,6 +20,7 @@ export const DebitCardScreen = (props) => {
   const [availableBalance, setAvailableBalance] = useState("50,000");
   const [spendingLimit, setSpendingLimit] = useState("1,000");
   const [isLimitEnabled, setIsLimitEnabled] = useState(false);
+  const [isFreezeCard, setIsFreezeCard] = useState(false);
 
   React.useEffect(() => {
     const unsubscribe = navigation.addListener("focus", () => {
@@ -41,35 +41,42 @@ export const DebitCardScreen = (props) => {
     }
   };
 
-  const toggleSwitch = () =>
-    setIsLimitEnabled((previousState) => !previousState);
+  const toggleSwitch = (id, value) =>
+    id == 1
+      ? setIsLimitEnabled((previousState) => !previousState)
+      : setIsFreezeCard((previousState) => !previousState);
 
-  const renderLimitDetail = () => {
+  const renderLimitDetail = ({ item }) => {
     return (
       <TouchableOpacity
-        onPress={() => navigation.navigate("SpendingLimit")}
+        disabled={!item.route}
+        onPress={() => navigation.navigate(item.route)}
         style={styles.limitContainer}
       >
         <View style={styles.limitdetail}>
           <Image
             resizeMode={"contain"}
             style={styles.limitIcon}
-            source={require("../../assets/spend_limit.png")}
+            source={item.image}
           />
           <View style={styles.limitDetailContainer}>
-            <Text style={styles.limitText}>Weekly spending limit</Text>
+            <Text style={styles.limitText}>{item.title}</Text>
             <Text numberOfLines={1} style={styles.limitDesText}>
-              {"Your weekly spending limit is S$ " + spendingLimit}
+              {item.id == 2 && isFreezeCard
+                ? "Your debit card is currently inactive"
+                : item.description + (item.id == 1 ? spendingLimit : "")}
             </Text>
           </View>
         </View>
-        <Switch
-          style={{ alignSelf: "flex-end" }}
-          trackColor={{ false: "#767577", true: colors.appGreen }}
-          thumbColor={"#f4f3f4"}
-          onValueChange={toggleSwitch}
-          value={isLimitEnabled}
-        />
+        {item.showSwitch ? (
+          <Switch
+            style={{ alignSelf: "flex-end" }}
+            trackColor={{ false: "#767577", true: colors.appGreen }}
+            thumbColor={"#f4f3f4"}
+            onValueChange={(value) => toggleSwitch(item.id, value)}
+            value={item.id == 1 ? isLimitEnabled : isFreezeCard}
+          />
+        ) : null}
       </TouchableOpacity>
     );
   };
@@ -99,7 +106,11 @@ export const DebitCardScreen = (props) => {
             contentContainerStyle={{ flexGrow: 1 }}
           >
             <View style={{ flex: 1, marginHorizontal: 20 }}>
-              {renderLimitDetail()}
+              <FlatList
+                data={DebitScreenList}
+                renderItem={renderLimitDetail}
+                keyExtractor={(item) => item.id}
+              />
             </View>
           </ScrollView>
         </View>
